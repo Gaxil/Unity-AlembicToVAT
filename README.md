@@ -19,6 +19,7 @@ System requirements
 
 How to use Alembic to VAT converter
 -------------------------------------
+![alt text](Doc/HowTo.gif) 
 Be sure to have the Alembic and Editor coroutine package installed in your project
 
 - Drop an alembic file in your scene
@@ -40,6 +41,10 @@ The tool have generated 2 textures :
 - xxx_normal that contains the aniamted normals in model space.
 You will also have a base mesh, a material and a ready to use prefab
 
+The Amplify shader material
+---------------------------
+![alt text](Doc/Material.PNG) 
+
 Creating you own compatible shader
 ----------------------------------
 The provided shader has been made with Amplify shader editor and you can easily modify it to match your needs.
@@ -58,7 +63,7 @@ To this UV2 you have to add to the X component the offset to go to the wanted fr
 
 Alembic samples provided in the project
 ---------------------------------------
-You can use freely the provided Alembic files, it's just simple test, feel free to do whatever you want with them
+You can use freely the provided Alembic files, it's just simple tests, feel free to do whatever you want with them
 
 When will this be updated?
 --------------------------
