@@ -19,7 +19,6 @@ System requirements
 
 How to use Alembic to VAT converter
 -------------------------------------
-
 Be sure to have the Alembic and Editor coroutine package installed in your project
 
 - Drop an alembic file in your scene
@@ -32,12 +31,17 @@ Be sure to have the Alembic and Editor coroutine package installed in your proje
 - If the export directory does not exist ... create it
 - Once you're happy with all of these, you can bake the animation with the 'Bake mesh' button. Depending on the complexity of your Alembic file, this may take some time.
 
+What does it generates?
+-------------------------
 Once done, all your resources are created and imported in your project automatically. You can drop the xxx_prefab object created and drop it in your scene. To animate the VAT, just change the Time position in the material. 
 
 The tool have generated 2 textures : 
 - xxx_position that contains the positions of the vertices relative to the first frame of the animation.
 - xxx_normal that contains the aniamted normals in model space.
+You will also have a base mesh, a material and a ready to use prefab
 
+Creating you own compatible shader
+----------------------------------
 The provided shader has been made with Amplify shader editor and you can easily modify it to match your needs.
 If you want to create an HLSL shader or HDRP/URP shader, it's pretty straight forward.
 You need : 
@@ -52,10 +56,15 @@ The texture coordinates to access those 2 textures are in the SECOND UV SET, not
 To this UV2 you have to add to the X component the offset to go to the wanted frame. So it will be something like frameNumber*1/Texture width.
 
 
+Alembic samples provided in the project
+---------------------------------------
+You can use freely the provided Alembic files, it's just simple test, feel free to do whatever you want with them
 
-Concerning the content of the project : You can use freely the provided Alembic files, it's just simple test, feel free to do whatever you want with them
-
+When will this be updated?
+--------------------------
 I may or may not update that project again, I have no plans for the moment ... it was just a 2-3 days quick project made to help my students use more efficiently their Alembic files, on any platform, for a very cheap cost.
 
+Can I use this tool freely?
+---------------------------
 Feel free to use the tool in your projects, improve it, modify it ... 
 Just don't sell it and make profit out of it please, it is free on purpose. 
