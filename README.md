@@ -54,9 +54,9 @@ A texture property called _VAT_positions where you'll have your vertex positions
 A texture property called _VAT_normals where you'll have your vertex normals texture
 A float property called _Framecount that will contain the number of frames in your animation (NOT the duration, the frame count)
 
-In your vertex shader
-the RGB of the VAT_normals texture will be the XYZ of the local vertex normal - it's already in a half format texture, you DON'T need to *2-1 like you do on a normal
-the RGB of the VAT_positions texture will be added to your vertex local position (or set as your Local vertex offset)
+In your vertex shader :
+The RGB of the VAT_normals texture will be the XYZ of the local vertex normal - it's already in a half format texture, you DON'T need to multiply by 2 subtract 1 like you do on a normal
+The RGB of the VAT_positions texture will be added to your vertex local position (or set as your Local vertex offset)
 The texture coordinates to access those 2 textures are in the SECOND UV SET, not the first one. So you can keep the texturing on your object
 To this UV2 you have to add to the X component the offset to go to the wanted frame. So it will be something like frameNumber*1/Texture width.
 
