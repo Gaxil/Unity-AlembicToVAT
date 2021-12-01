@@ -4,6 +4,7 @@ Shader "VATMaterial"
 {
 	Properties
 	{
+		_MainTex("Texture", 2D) = "white" {}
 		_Timeposition("Time position", Range( 0 , 1)) = 0
 		_Color("Color", Color) = (1,0.5773492,0,0)
 		_Metalness("Metalness", Range( 0 , 1)) = 0
@@ -24,6 +25,7 @@ Shader "VATMaterial"
 		struct Input
 		{
 			half filler;
+			float2 uv_MainTex;
 		};
 
 		uniform sampler2D _VAT_positions;
@@ -34,6 +36,7 @@ Shader "VATMaterial"
 		uniform float4 _Color;
 		uniform float _Metalness;
 		uniform float _Roughness;
+		uniform sampler2D _MainTex;
 
 		void vertexDataFunc( inout appdata_full v, out Input o )
 		{
@@ -46,7 +49,7 @@ Shader "VATMaterial"
 
 		void surf( Input i , inout SurfaceOutputStandard o )
 		{
-			o.Albedo = _Color.rgb;
+			o.Albedo = tex2D (_MainTex, i.uv_MainTex).rgb * _Color;
 			o.Metallic = _Metalness;
 			o.Smoothness = ( 1.0 - _Roughness );
 			o.Alpha = 1;
